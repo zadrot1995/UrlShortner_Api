@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Domain.Models.Url>
+
+<h2>Список пользователей</h2>
+<p><a asp-action="Create">Добавить пользователя</a></p>
+<table class="table">
+    <tr><th>ShortUrl</th><th>LongUrl</th></tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ShortUrl</td>
+            <td>@item.LongUrl</td>
+        </tr>
+    }
+</table>

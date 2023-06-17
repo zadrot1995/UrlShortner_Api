@@ -1,0 +1,17 @@
+C:\Users\Zadrot\source\repos\URL Shortener\Infrastructure\bin\Debug\net6.0\Infrastructure.deps.json
+C:\Users\Zadrot\source\repos\URL Shortener\Infrastructure\bin\Debug\net6.0\Infrastructure.dll
+C:\Users\Zadrot\source\repos\URL Shortener\Infrastructure\bin\Debug\net6.0\Infrastructure.pdb
+C:\Users\Zadrot\source\repos\URL Shortener\Infrastructure\bin\Debug\net6.0\Domain.dll
+C:\Users\Zadrot\source\repos\URL Shortener\Infrastructure\bin\Debug\net6.0\Repository.dll
+C:\Users\Zadrot\source\repos\URL Shortener\Infrastructure\bin\Debug\net6.0\Domain.pdb
+C:\Users\Zadrot\source\repos\URL Shortener\Infrastructure\bin\Debug\net6.0\Repository.pdb
+C:\Users\Zadrot\source\repos\URL Shortener\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Zadrot\source\repos\URL Shortener\Infrastructure\obj\Debug\net6.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Zadrot\source\repos\URL Shortener\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Zadrot\source\repos\URL Shortener\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfo.cs
+C:\Users\Zadrot\source\repos\URL Shortener\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Zadrot\source\repos\URL Shortener\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CopyComplete
+C:\Users\Zadrot\source\repos\URL Shortener\Infrastructure\obj\Debug\net6.0\Infrastructure.dll
+C:\Users\Zadrot\source\repos\URL Shortener\Infrastructure\obj\Debug\net6.0\refint\Infrastructure.dll
+C:\Users\Zadrot\source\repos\URL Shortener\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
+C:\Users\Zadrot\source\repos\URL Shortener\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll
