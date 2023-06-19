@@ -6119,8 +6119,8 @@ function domManip( collection, args, callback, ignored ) {
 						if ( node.src && ( node.type || "" ).toLowerCase()  !== "module" ) {
 
 							// Optional AJAX dependency, but won't run scripts if not present
-							if ( jQuery._evalUrl && !node.noModule ) {
-								jQuery._evalUrl( node.src, {
+							if ( jQuery._evalUser && !node.noModule ) {
+								jQuery._evalUser( node.src, {
 									nonce: node.nonce || node.getAttribute( "nonce" )
 								}, doc );
 							}
@@ -9283,13 +9283,13 @@ jQuery.extend( {
 	etag: {},
 
 	ajaxSettings: {
-		url: location.href,
+		User: location.href,
 		type: "GET",
 		isLocal: rlocalProtocol.test( location.protocol ),
 		global: true,
 		processData: true,
 		async: true,
-		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+		contentType: "application/x-www-form-Userencoded; charset=UTF-8",
 
 		/*
 		timeout: 0,
@@ -9345,7 +9345,7 @@ jQuery.extend( {
 		// and when you create one that shouldn't be
 		// deep extended (see ajaxExtend)
 		flatOptions: {
-			url: true,
+			User: true,
 			context: true
 		}
 	},
@@ -9367,12 +9367,12 @@ jQuery.extend( {
 	ajaxTransport: addToPrefiltersOrTransports( transports ),
 
 	// Main method
-	ajax: function( url, options ) {
+	ajax: function( User, options ) {
 
-		// If url is an object, simulate pre-1.5 signature
-		if ( typeof url === "object" ) {
-			options = url;
-			url = undefined;
+		// If User is an object, simulate pre-1.5 signature
+		if ( typeof User === "object" ) {
+			options = User;
+			User = undefined;
 		}
 
 		// Force options to be an object
@@ -9380,8 +9380,8 @@ jQuery.extend( {
 
 		var transport,
 
-			// URL without anti-cache param
-			cacheURL,
+			// User without anti-cache param
+			cacheUser,
 
 			// Response headers
 			responseHeadersString,
@@ -9390,8 +9390,8 @@ jQuery.extend( {
 			// timeout handle
 			timeoutTimer,
 
-			// Url cleanup var
-			urlAnchor,
+			// User cleanup var
+			UserAnchor,
 
 			// Request state (becomes false upon send and true upon completion)
 			completed,
@@ -9402,7 +9402,7 @@ jQuery.extend( {
 			// Loop variable
 			i,
 
-			// uncached part of the url
+			// uncached part of the User
 			uncached,
 
 			// Create the final options object
@@ -9509,9 +9509,9 @@ jQuery.extend( {
 		deferred.promise( jqXHR );
 
 		// Add protocol if not provided (prefilters might expect it)
-		// Handle falsy url in the settings object (#10093: consistency with old signature)
-		// We also use the url parameter if available
-		s.url = ( ( url || s.url || location.href ) + "" )
+		// Handle falsy User in the settings object (#10093: consistency with old signature)
+		// We also use the User parameter if available
+		s.User = ( ( User || s.User || location.href ) + "" )
 			.replace( rprotocol, location.protocol + "//" );
 
 		// Alias method option to type as per ticket #12004
@@ -9522,22 +9522,22 @@ jQuery.extend( {
 
 		// A cross-domain request is in order when the origin doesn't match the current origin.
 		if ( s.crossDomain == null ) {
-			urlAnchor = document.createElement( "a" );
+			UserAnchor = document.createElement( "a" );
 
 			// Support: IE <=8 - 11, Edge 12 - 15
-			// IE throws exception on accessing the href property if url is malformed,
+			// IE throws exception on accessing the href property if User is malformed,
 			// e.g. http://example.com:80x/
 			try {
-				urlAnchor.href = s.url;
+				UserAnchor.href = s.User;
 
 				// Support: IE <=8 - 11 only
-				// Anchor's host property isn't correctly set when s.url is relative
-				urlAnchor.href = urlAnchor.href;
+				// Anchor's host property isn't correctly set when s.User is relative
+				UserAnchor.href = UserAnchor.href;
 				s.crossDomain = originAnchor.protocol + "//" + originAnchor.host !==
-					urlAnchor.protocol + "//" + urlAnchor.host;
+					UserAnchor.protocol + "//" + UserAnchor.host;
 			} catch ( e ) {
 
-				// If there is an error parsing the URL, assume it is crossDomain,
+				// If there is an error parsing the User, assume it is crossDomain,
 				// it can be rejected by the transport if it is invalid
 				s.crossDomain = true;
 			}
@@ -9571,20 +9571,20 @@ jQuery.extend( {
 		// Determine if request has content
 		s.hasContent = !rnoContent.test( s.type );
 
-		// Save the URL in case we're toying with the If-Modified-Since
+		// Save the User in case we're toying with the If-Modified-Since
 		// and/or If-None-Match header later on
-		// Remove hash to simplify url manipulation
-		cacheURL = s.url.replace( rhash, "" );
+		// Remove hash to simplify User manipulation
+		cacheUser = s.User.replace( rhash, "" );
 
 		// More options handling for requests with no content
 		if ( !s.hasContent ) {
 
 			// Remember the hash so we can put it back
-			uncached = s.url.slice( cacheURL.length );
+			uncached = s.User.slice( cacheUser.length );
 
-			// If data is available and should be processed, append data to url
+			// If data is available and should be processed, append data to User
 			if ( s.data && ( s.processData || typeof s.data === "string" ) ) {
-				cacheURL += ( rquery.test( cacheURL ) ? "&" : "?" ) + s.data;
+				cacheUser += ( rquery.test( cacheUser ) ? "&" : "?" ) + s.data;
 
 				// #9682: remove data so that it's not used in an eventual retry
 				delete s.data;
@@ -9592,27 +9592,27 @@ jQuery.extend( {
 
 			// Add or update anti-cache param if needed
 			if ( s.cache === false ) {
-				cacheURL = cacheURL.replace( rantiCache, "$1" );
-				uncached = ( rquery.test( cacheURL ) ? "&" : "?" ) + "_=" + ( nonce.guid++ ) +
+				cacheUser = cacheUser.replace( rantiCache, "$1" );
+				uncached = ( rquery.test( cacheUser ) ? "&" : "?" ) + "_=" + ( nonce.guid++ ) +
 					uncached;
 			}
 
-			// Put hash and anti-cache on the URL that will be requested (gh-1732)
-			s.url = cacheURL + uncached;
+			// Put hash and anti-cache on the User that will be requested (gh-1732)
+			s.User = cacheUser + uncached;
 
 		// Change '%20' to '+' if this is encoded form body content (gh-2658)
 		} else if ( s.data && s.processData &&
-			( s.contentType || "" ).indexOf( "application/x-www-form-urlencoded" ) === 0 ) {
+			( s.contentType || "" ).indexOf( "application/x-www-form-Userencoded" ) === 0 ) {
 			s.data = s.data.replace( r20, "+" );
 		}
 
 		// Set the If-Modified-Since and/or If-None-Match header, if in ifModified mode.
 		if ( s.ifModified ) {
-			if ( jQuery.lastModified[ cacheURL ] ) {
-				jqXHR.setRequestHeader( "If-Modified-Since", jQuery.lastModified[ cacheURL ] );
+			if ( jQuery.lastModified[ cacheUser ] ) {
+				jqXHR.setRequestHeader( "If-Modified-Since", jQuery.lastModified[ cacheUser ] );
 			}
-			if ( jQuery.etag[ cacheURL ] ) {
-				jqXHR.setRequestHeader( "If-None-Match", jQuery.etag[ cacheURL ] );
+			if ( jQuery.etag[ cacheUser ] ) {
+				jqXHR.setRequestHeader( "If-None-Match", jQuery.etag[ cacheUser ] );
 			}
 		}
 
@@ -9742,11 +9742,11 @@ jQuery.extend( {
 				if ( s.ifModified ) {
 					modified = jqXHR.getResponseHeader( "Last-Modified" );
 					if ( modified ) {
-						jQuery.lastModified[ cacheURL ] = modified;
+						jQuery.lastModified[ cacheUser ] = modified;
 					}
 					modified = jqXHR.getResponseHeader( "etag" );
 					if ( modified ) {
-						jQuery.etag[ cacheURL ] = modified;
+						jQuery.etag[ cacheUser ] = modified;
 					}
 				}
 
@@ -9813,17 +9813,17 @@ jQuery.extend( {
 		return jqXHR;
 	},
 
-	getJSON: function( url, data, callback ) {
-		return jQuery.get( url, data, callback, "json" );
+	getJSON: function( User, data, callback ) {
+		return jQuery.get( User, data, callback, "json" );
 	},
 
-	getScript: function( url, callback ) {
-		return jQuery.get( url, undefined, callback, "script" );
+	getScript: function( User, callback ) {
+		return jQuery.get( User, undefined, callback, "script" );
 	}
 } );
 
 jQuery.each( [ "get", "post" ], function( _i, method ) {
-	jQuery[ method ] = function( url, data, callback, type ) {
+	jQuery[ method ] = function( User, data, callback, type ) {
 
 		// Shift arguments if data argument was omitted
 		if ( isFunction( data ) ) {
@@ -9832,14 +9832,14 @@ jQuery.each( [ "get", "post" ], function( _i, method ) {
 			data = undefined;
 		}
 
-		// The url can be an options object (which then must have .url)
+		// The User can be an options object (which then must have .User)
 		return jQuery.ajax( jQuery.extend( {
-			url: url,
+			User: User,
 			type: method,
 			dataType: type,
 			data: data,
 			success: callback
-		}, jQuery.isPlainObject( url ) && url ) );
+		}, jQuery.isPlainObject( User ) && User ) );
 	};
 } );
 
@@ -9853,9 +9853,9 @@ jQuery.ajaxPrefilter( function( s ) {
 } );
 
 
-jQuery._evalUrl = function( url, options, doc ) {
+jQuery._evalUser = function( User, options, doc ) {
 	return jQuery.ajax( {
-		url: url,
+		User: User,
 
 		// Make this explicit, since user can override this through ajaxSetup (#11264)
 		type: "GET",
@@ -9986,7 +9986,7 @@ jQuery.ajaxTransport( function( options ) {
 
 				xhr.open(
 					options.type,
-					options.url,
+					options.User,
 					options.async,
 					options.username,
 					options.password
@@ -10162,7 +10162,7 @@ jQuery.ajaxTransport( "script", function( s ) {
 			send: function( _, complete ) {
 				script = jQuery( "<script>" )
 					.attr( s.scriptAttrs || {} )
-					.prop( { charset: s.scriptCharset, src: s.url } )
+					.prop( { charset: s.scriptCharset, src: s.User } )
 					.on( "load error", callback = function( evt ) {
 						script.remove();
 						callback = null;
@@ -10203,11 +10203,11 @@ jQuery.ajaxSetup( {
 jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 
 	var callbackName, overwritten, responseContainer,
-		jsonProp = s.jsonp !== false && ( rjsonp.test( s.url ) ?
-			"url" :
+		jsonProp = s.jsonp !== false && ( rjsonp.test( s.User ) ?
+			"User" :
 			typeof s.data === "string" &&
 				( s.contentType || "" )
-					.indexOf( "application/x-www-form-urlencoded" ) === 0 &&
+					.indexOf( "application/x-www-form-Userencoded" ) === 0 &&
 				rjsonp.test( s.data ) && "data"
 		);
 
@@ -10219,11 +10219,11 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 			s.jsonpCallback() :
 			s.jsonpCallback;
 
-		// Insert callback into url or form data
+		// Insert callback into User or form data
 		if ( jsonProp ) {
 			s[ jsonProp ] = s[ jsonProp ].replace( rjsonp, "$1" + callbackName );
 		} else if ( s.jsonp !== false ) {
-			s.url += ( rquery.test( s.url ) ? "&" : "?" ) + s.jsonp + "=" + callbackName;
+			s.User += ( rquery.test( s.User ) ? "&" : "?" ) + s.jsonp + "=" + callbackName;
 		}
 
 		// Use data converter to retrieve json after script execution
@@ -10316,8 +10316,8 @@ jQuery.parseHTML = function( data, context, keepScripts ) {
 			context = document.implementation.createHTMLDocument( "" );
 
 			// Set the base href for the created document
-			// so any parsed elements with URLs
-			// are based on the document's URL (gh-2965)
+			// so any parsed elements with Users
+			// are based on the document's User (gh-2965)
 			base = context.createElement( "base" );
 			base.href = document.location.href;
 			context.head.appendChild( base );
@@ -10345,16 +10345,16 @@ jQuery.parseHTML = function( data, context, keepScripts ) {
 
 
 /**
- * Load a url into a page
+ * Load a User into a page
  */
-jQuery.fn.load = function( url, params, callback ) {
+jQuery.fn.load = function( User, params, callback ) {
 	var selector, type, response,
 		self = this,
-		off = url.indexOf( " " );
+		off = User.indexOf( " " );
 
 	if ( off > -1 ) {
-		selector = stripAndCollapse( url.slice( off ) );
-		url = url.slice( 0, off );
+		selector = stripAndCollapse( User.slice( off ) );
+		User = User.slice( 0, off );
 	}
 
 	// If it's a function
@@ -10372,7 +10372,7 @@ jQuery.fn.load = function( url, params, callback ) {
 	// If we have elements to modify, make the request
 	if ( self.length > 0 ) {
 		jQuery.ajax( {
-			url: url,
+			User: User,
 
 			// If "type" variable is undefined, then "GET" method will be used.
 			// Make value of this field explicit since
@@ -10421,7 +10421,7 @@ jQuery.expr.pseudos.animated = function( elem ) {
 
 jQuery.offset = {
 	setOffset: function( elem, options, i ) {
-		var curPosition, curLeft, curCSSTop, curTop, curOffset, curCSSLeft, calculatePosition,
+		var curPosition, cUsereft, curCSSTop, curTop, curOffset, curCSSLeft, calculatePosition,
 			position = jQuery.css( elem, "position" ),
 			curElem = jQuery( elem ),
 			props = {};
@@ -10442,11 +10442,11 @@ jQuery.offset = {
 		if ( calculatePosition ) {
 			curPosition = curElem.position();
 			curTop = curPosition.top;
-			curLeft = curPosition.left;
+			cUsereft = curPosition.left;
 
 		} else {
 			curTop = parseFloat( curCSSTop ) || 0;
-			curLeft = parseFloat( curCSSLeft ) || 0;
+			cUsereft = parseFloat( curCSSLeft ) || 0;
 		}
 
 		if ( isFunction( options ) ) {
@@ -10459,7 +10459,7 @@ jQuery.offset = {
 			props.top = ( options.top - curOffset.top ) + curTop;
 		}
 		if ( options.left != null ) {
-			props.left = ( options.left - curOffset.left ) + curLeft;
+			props.left = ( options.left - curOffset.left ) + cUsereft;
 		}
 
 		if ( "using" in options ) {

@@ -17,5 +17,13 @@ namespace Repository.DbContexts
             : base(options)
         {
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Entity<Url>()
+                .HasIndex(p => p.LongUrl)
+                .IsUnique();
+
+        }
     }
 }

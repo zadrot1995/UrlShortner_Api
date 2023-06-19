@@ -1,6 +1,8 @@
 ﻿using Domain.Models;
 using Infrastructure.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Repository.Interfaces;
+using Repository.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +22,7 @@ namespace Infrastructure.Services
             _urlRepository = urlRepository;
         }
 
-        public bool Delete(Guid id)
+        public async Task<bool> Delete(Guid id)
         {
             var url = _urlRepository.GetById(id).Result;
 
@@ -28,32 +30,54 @@ namespace Infrastructure.Services
             {
                 //throw new HttpStatusException(HttpStatusCode.NotFound, "Company not found");
             }
-            //_urlRepository.Delete(url);
-            //_urlRepository.Save();
+            using (IUrlRepository urlRepository = _urlRepository)
+            {
+                urlRepository.Delete(url);
+                urlRepository.Save();
+            }
             return true;
         }
 
-        public IQueryable<Url> Get() => _urlRepository.Get();
-
-        public Url GetById(Guid id)
+        public async Task<IEnumerable<Url>> Get()
         {
-            var result = _urlRepository.GetById(id).Result;
-            if (result != null)
+            using (IUrlRepository urlRepository = _urlRepository)
             {
+                var result = await urlRepository.Get().Include(url => url.Creator).ToListAsync();
                 return result;
             }
             return null;
-            //throw new HttpStatusException(HttpStatusCode.NotFound, "Company not found");
+        }
+
+        public Url GetById(Guid id)
+        {
+            using (IUrlRepository urlRepository = _urlRepository)
+            {
+                var result = urlRepository.GetById(id).Result;
+                if (result != null)
+                {
+                    return result;
+                }
+                return null;
+            }
+            
+            return null;
         }
 
         public void Insert(Url url)
         {
+
             if (url != null)
             {
                 using(IUrlRepository urlRepository = _urlRepository)
                 {
-                    _urlRepository.Insert(url);
-                    _urlRepository.Save();
+                    var isAlreadyExist = urlRepository.Get().Where(u => url.LongUrl == u.LongUrl).Any();
+                    if (!isAlreadyExist)
+                    {
+                        url.ShortUrl = url.LongUrl.Substring(0,8) + DateTime.UtcNow.Ticks.ToString("x");
+                        urlRepository.Insert(url);
+                        urlRepository.Save();
+                    }
+                    else throw new Exception("Already Exist");
                 }
             }
             //throw new HttpStatusException(HttpStatusCode.BadRequest, "Company cannot be null");
@@ -63,8 +87,11 @@ namespace Infrastructure.Services
         {
             if (url != null)
             {
-                _urlRepository.Update(url);
-                await _urlRepository.Save();
+                using (IUrlRepository urlRepository = _urlRepository)
+                {
+                    urlRepository.Update(url);
+                    urlRepository.Save();
+                }
             }
             //throw new HttpStatusException(HttpStatusCode.BadRequest, "Company cannot be null");
         }

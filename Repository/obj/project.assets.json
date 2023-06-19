@@ -505,6 +505,19 @@
           }
         }
       },
+      "SmazSharp/0.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/SmazSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/SmazSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Collections.Immutable/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -1533,6 +1546,27 @@
         "version.txt"
       ]
     },
+    "SmazSharp/0.1.0": {
+      "sha512": "SA6kAmyGO2h4rv4HKO9GUwjWI/S5XLjihozNHXfs5VqnNkCVj/jv1zD988jsmwGGcv/iutZKRWoOpoz2C8EvgA==",
+      "type": "package",
+      "path": "smazsharp/0.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/SmazSharp.dll",
+        "lib/net20/SmazSharp.xml",
+        "lib/net30/SmazSharp.dll",
+        "lib/net30/SmazSharp.xml",
+        "lib/net35/SmazSharp.dll",
+        "lib/net35/SmazSharp.xml",
+        "lib/net40/SmazSharp.dll",
+        "lib/net40/SmazSharp.xml",
+        "lib/net45/SmazSharp.dll",
+        "lib/net45/SmazSharp.xml",
+        "smazsharp.0.1.0.nupkg.sha512",
+        "smazsharp.nuspec"
+      ]
+    },
     "System.Collections.Immutable/6.0.0": {
       "sha512": "l4zZJ1WU2hqpQQHXz1rvC3etVZN+2DLmQMO79FhOTZHMn8tDRr+WU287sbomD0BETlmKDn0ygUgVy9k5xkkJdA==",
       "type": "package",
@@ -2027,7 +2061,8 @@
     "net6.0": [
       "Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.18",
-      "Microsoft.EntityFrameworkCore.Tools >= 6.0.18"
+      "Microsoft.EntityFrameworkCore.Tools >= 6.0.18",
+      "SmazSharp >= 0.1.0"
     ]
   },
   "packageFolders": {
@@ -2088,6 +2123,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[6.0.18, )"
+          },
+          "SmazSharp": {
+            "target": "Package",
+            "version": "[0.1.0, )"
           }
         },
         "imports": [
@@ -2109,5 +2148,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'SmazSharp 0.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "SmazSharp",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

@@ -1,3 +1,11 @@
+C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\URL Shortener.csproj.AssemblyReference.cache
+C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\URL Shortener.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\URL Shortener.AssemblyInfoInputs.cache
+C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\URL Shortener.AssemblyInfo.cs
+C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\URL Shortener.csproj.CoreCompileInputs.cache
+C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\URL Shortener.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\URL Shortener.RazorAssemblyInfo.cache
+C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\URL Shortener.RazorAssemblyInfo.cs
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\appsettings.json
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\URL Shortener.staticwebassets.runtime.json
@@ -6,9 +14,11 @@ C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\URL Sh
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\URL Shortener.runtimeconfig.json
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\URL Shortener.dll
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\URL Shortener.pdb
+C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\Humanizer.dll
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
@@ -41,17 +51,11 @@ C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\runtim
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\Domain.dll
+C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\Infrastructure.dll
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\Repository.dll
+C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\Infrastructure.pdb
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\Repository.pdb
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\Domain.pdb
-C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\URL Shortener.csproj.AssemblyReference.cache
-C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\URL Shortener.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\URL Shortener.AssemblyInfoInputs.cache
-C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\URL Shortener.AssemblyInfo.cs
-C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\URL Shortener.csproj.CoreCompileInputs.cache
-C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\URL Shortener.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\URL Shortener.RazorAssemblyInfo.cache
-C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\URL Shortener.RazorAssemblyInfo.cs
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\staticwebassets\msbuild.URL Shortener.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\staticwebassets\msbuild.build.URL Shortener.props
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.URL Shortener.props
@@ -68,7 +72,13 @@ C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\refint
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\URL Shortener.pdb
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\URL Shortener.genruntimeconfig.cache
 C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\obj\Debug\net6.0\ref\URL Shortener.dll
-C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\Humanizer.dll
-C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\Infrastructure.dll
-C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\Infrastructure.pdb
+C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\SmazSharp.dll
+C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\System.Web.Mvc.dll
+C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\System.Web.Razor.dll
+C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\System.Web.Helpers.dll
+C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\System.Web.WebPages.dll
+C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
+C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Zadrot\source\repos\URL Shortener\URL Shortener\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

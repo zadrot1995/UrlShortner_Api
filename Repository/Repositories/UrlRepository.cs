@@ -25,8 +25,6 @@ namespace Repository.Repositories
         public async void Delete(Url url)
         {
             _context.Urls.Remove(url);
-            await _context.SaveChangesAsync();
-
         }
 
         public IQueryable<Url> Get()
@@ -36,25 +34,23 @@ namespace Repository.Repositories
 
         public async Task<Url?> GetById(Guid id)
         {
-            return await _context.Urls.FindAsync(id);
+            return await _context.Urls.Include(url => url.Creator).Where(url => url.Id == id).FirstOrDefaultAsync();
         }
 
-        public async Task Insert(Url url)
+        public void Insert(Url url)
         {
-            await _context.Urls.AddAsync(url);
-            await _context.SaveChangesAsync();
+            _context.Urls.Add(url);
         }
 
-        public async void Update(Url url)
+        public void Update(Url url)
         {
             _context.Urls.Update(url);
-            await _context.SaveChangesAsync();
 
         }
 
-        public async Task Save()
+        public void Save()
         {
-            await _context.SaveChangesAsync();
+            _context.SaveChanges();
         }
 
         public void Dispose()

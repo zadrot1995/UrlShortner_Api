@@ -197,6 +197,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.18, )"
+            },
+            "SmazSharp": {
+              "target": "Package",
+              "version": "[0.1.0, )"
             }
           },
           "imports": [
@@ -267,6 +271,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNet.Mvc": {
+              "target": "Package",
+              "version": "[5.2.9, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.18, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[6.0.18, )"
@@ -276,6 +288,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.18, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [

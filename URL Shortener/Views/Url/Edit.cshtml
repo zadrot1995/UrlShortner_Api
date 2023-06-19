@@ -1,0 +1,22 @@
+﻿@model Domain.Models.Url
+
+<h2>Edit url</h2>
+<form asp-action="edit" asp-controller="url" asp-route-id="@Model.Id">
+    <p>
+        <label asp-for="ShortUrl">ShortUrl</label><br />
+        <input type="text" asp-for="ShortUrl" />
+    </p>
+    <p>
+        <label asp-for="LongUrl">LongUrl</label><br />
+        <input type="text" asp-for="LongUrl" />
+    </p>
+    <input asp-for="CreatorId"
+           data-val="true"
+           id="CreatorId"
+           name="CreatorId"
+           type="hidden"
+           value="@Model.CreatorId" />
+    <p>
+        <button class="btn waves-effect waves-light teal darken-2" type="submit">Save</button>
+    </p>
+</form>

@@ -1,14 +1,36 @@
 ﻿@model IEnumerable<Domain.Models.Url>
 
-<h2>Список пользователей</h2>
-<p><a asp-action="Create">Добавить пользователя</a></p>
-<table class="table">
-    <tr><th>ShortUrl</th><th>LongUrl</th></tr>
+
+
+<h2>List of Urls</h2>
+@{
+    if (User.Identity.IsAuthenticated)
+    {
+        <a asp-action="Create" class="waves-effect waves-light btn teal darken-2"><i class="material-icons">Add new url</i></a>
+    }
+}
+
+<table class="table highlight">
+    <tr><th>Short Url</th><th>Long Url</th></tr>
     @foreach (var item in Model)
     {
-        <tr>
+        <tr onclick="location.href = 'url/getbyid/@(item.Id)'">
             <td>@item.ShortUrl</td>
             <td>@item.LongUrl</td>
+            @{
+                if (User.Identity.IsAuthenticated && User.Identity.Name == item.Creator.Login)
+                {
+                    <td>
+                        <a asp-action="Edit" asp-controller="url" asp-route-id="@item.Id" class="btn-floating btn-large waves-effect waves-light teal darken-2">Изменить</a>
+                    </td>
+
+                    <td>
+                        <form asp-controller="url" asp-action="Delete" method="post" asp-route-id="@item.Id">
+                            <button class="btn-floating btn-large waves-effect waves-light red darken-4" type="submit" value="Delete" />
+                        </form>
+                    </td>
+                }
+            }
         </tr>
     }
 </table>

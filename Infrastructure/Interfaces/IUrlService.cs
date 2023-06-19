@@ -9,10 +9,10 @@ namespace Infrastructure.Interfaces
 {
     public interface IUrlService
     {
-        IQueryable<Url> Get();
+        Task<IEnumerable<Url>> Get();
         Url GetById(Guid id);
         void Insert(Url url);
-        bool Delete(Guid id);
+        Task<bool> Delete(Guid id);
         void Update(Url url);
     }
 }

@@ -12,10 +12,10 @@ namespace Repository.Interfaces
     {
         IQueryable<Url> Get();
         Task<Url?> GetById(Guid id);
-        Task Insert(Url url);
+        void Insert(Url url);
         void Delete(Url id);
         void Update(Url url);
-        Task Save();
+        void Save();
 
     }
 }

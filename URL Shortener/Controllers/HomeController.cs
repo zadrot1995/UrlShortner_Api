@@ -4,6 +4,7 @@ using URL_Shortener.Models;
 
 namespace URL_Shortener.Controllers
 {
+    [System.Web.Mvc.HandleError]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
